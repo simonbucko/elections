@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import volby.entities.Party.Party;
 import volby.entities.candidate.Candidate;
 import volby.entities.candidate.CandidateCreationDTO;
+import volby.entities.candidate.CandidateUpdateDTO;
 import volby.repositories.CandidateRepository;
 import volby.repositories.PartyRepository;
 
@@ -26,10 +27,6 @@ public class CandidateService {
         this.modelMapper = new ModelMapper();
     }
 
-    private Candidate convertCandidateCreationDTOToCandidate(CandidateCreationDTO candidate){
-        return modelMapper.map(candidate,Candidate.class);
-    }
-
     public ResponseEntity<List<Candidate>> getAllCandidates() {
         return new ResponseEntity<>(candidateRepository.findAll(), HttpStatus.OK);
     }
@@ -40,5 +37,13 @@ public class CandidateService {
         newCandidate.setName(candidate.getName());
         newCandidate.setParty(party);
         return new ResponseEntity<>(candidateRepository.save(newCandidate), HttpStatus.OK);
+    }
+
+    public ResponseEntity<Candidate> updateCandidate(CandidateUpdateDTO candidate) {
+        Candidate savedCandidate = candidateRepository.getById(candidate.getId());
+        Party party = partyRepository.getById(candidate.getParty());
+        savedCandidate.setName(candidate.getName());
+        savedCandidate.setParty(party);
+        return new ResponseEntity<>(candidateRepository.save(savedCandidate), HttpStatus.OK);
     }
 }
