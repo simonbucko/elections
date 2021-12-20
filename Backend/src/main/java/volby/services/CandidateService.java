@@ -39,9 +39,6 @@ public class CandidateService {
         Candidate newCandidate = new Candidate();
         newCandidate.setName(candidate.getName());
         newCandidate.setParty(party);
-//        System.out.println(candidate.getName()+"  "+candidate.getParty());
-//        System.out.println(party.getName()+",party name");
-//        System.out.println(savedCandidate.getId() + savedCandidate.getName());
         return new ResponseEntity<>(candidateRepository.save(newCandidate), HttpStatus.OK);
     }
 }
