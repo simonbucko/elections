@@ -31,4 +31,9 @@ public class CandidatesREST {
     private ResponseEntity<Candidate> updateCandidate(@RequestBody CandidateUpdateDTO candidate) {
         return candidateService.updateCandidate(candidate);
     }
+
+    @DeleteMapping("/{id}")
+    private ResponseEntity deleteCandidate(@PathVariable int id) {
+        return candidateService.deleteCandidate(id);
+    }
 }

@@ -46,4 +46,9 @@ public class CandidateService {
         savedCandidate.setParty(party);
         return new ResponseEntity<>(candidateRepository.save(savedCandidate), HttpStatus.OK);
     }
+
+    public ResponseEntity deleteCandidate(int id) {
+        candidateRepository.deleteById(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }

@@ -20,7 +20,7 @@ public class Candidate {
 
     private String name;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.DETACH)
     //this means that the join this by teacher column in Student table that referes to id in teacher
     @JoinColumn(name="parties_id",referencedColumnName = "id")
     @JsonIgnoreProperties("candidates")
