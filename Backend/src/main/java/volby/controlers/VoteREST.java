@@ -3,11 +3,8 @@ package volby.controlers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import volby.entities.candidate.Candidate;
-import volby.entities.candidate.CandidateCreationDTO;
 import volby.entities.vote.Vote;
 import volby.entities.vote.VoteCreationDTO;
-import volby.services.CandidateService;
 import volby.services.VoteService;
 
 import java.util.List;
