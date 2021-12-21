@@ -1,2 +1,5 @@
-import { SERVER_URL } from "./constants/index.js";
-console.log(SERVER_URL)
+const cprForm = document.getElementById("cprForm");
+cprForm.addEventListener("submit", (e) => {
+    e.preventDefault()
+
+})
