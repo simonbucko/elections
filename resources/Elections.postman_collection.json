@@ -1,0 +1,274 @@
+{
+	"id": "39e73246-990e-2b1a-3db8-0172f4915bc9",
+	"name": "Elections",
+	"description": "",
+	"order": [
+		"e2ef54a3-907e-0180-b4c5-5f0ac20c6e11",
+		"0318b057-f513-a1d3-5681-88c460b94ff1",
+		"285c4df2-5bd4-8cb3-b483-05ac0a4fab17",
+		"dd5979af-5dc8-bbec-62b6-21109e728998",
+		"6260fb33-29c9-a416-ef4a-3b9373769eec",
+		"fb40526e-ce93-e4bc-bb62-a974083b705b",
+		"b9c0de3f-71a7-07f0-8617-459ad8a5e9c7"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1640025477058,
+	"owner": "7309682",
+	"public": false,
+	"requests": [
+		{
+			"id": "0318b057-f513-a1d3-5681-88c460b94ff1",
+			"headers": "Accept: application/json\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api/candidates",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1640042235177,
+			"name": "create candidate",
+			"description": "",
+			"collectionId": "39e73246-990e-2b1a-3db8-0172f4915bc9",
+			"responses": [],
+			"rawModeData": "{\n\t\"name\":\"Simon\",\n\t\"party\": 3\n}"
+		},
+		{
+			"id": "285c4df2-5bd4-8cb3-b483-05ac0a4fab17",
+			"headers": "Accept: application/json\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api/candidates",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "PUT",
+			"collectionId": "39e73246-990e-2b1a-3db8-0172f4915bc9",
+			"data": [],
+			"dataMode": "raw",
+			"name": "update candidate",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1640031235796,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"id\":23,\n\t\"name\":\"Simona\",\n\t\"party\": 1\n}"
+		},
+		{
+			"id": "6260fb33-29c9-a416-ef4a-3b9373769eec",
+			"headers": "Accept: application/json\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api/votes",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "39e73246-990e-2b1a-3db8-0172f4915bc9",
+			"data": [],
+			"dataMode": "raw",
+			"name": "all votes",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1640044985774,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"email\":\"ke@gmail.com\",\n\t\"password\": \"password\"\n}"
+		},
+		{
+			"id": "b9c0de3f-71a7-07f0-8617-459ad8a5e9c7",
+			"headers": "Accept: application/json\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api/parties/1",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1640046935053,
+			"name": "get party",
+			"description": "",
+			"collectionId": "39e73246-990e-2b1a-3db8-0172f4915bc9",
+			"responses": [],
+			"rawModeData": "{\n\t\"email\":\"ke@gmail.com\",\n\t\"password\": \"password\"\n}"
+		},
+		{
+			"id": "dd5979af-5dc8-bbec-62b6-21109e728998",
+			"headers": "Accept: application/json\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api/candidates/24",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1640046911254,
+			"name": "delete candidate",
+			"description": "",
+			"collectionId": "39e73246-990e-2b1a-3db8-0172f4915bc9",
+			"responses": []
+		},
+		{
+			"id": "e2ef54a3-907e-0180-b4c5-5f0ac20c6e11",
+			"headers": "Accept: application/json\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api/candidates",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1640026080003,
+			"name": "all candidates",
+			"description": "",
+			"collectionId": "39e73246-990e-2b1a-3db8-0172f4915bc9",
+			"responses": [],
+			"rawModeData": "{\n\t\"email\":\"ke@gmail.com\",\n\t\"password\": \"password\"\n}"
+		},
+		{
+			"id": "fb40526e-ce93-e4bc-bb62-a974083b705b",
+			"headers": "Accept: application/json\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api/votes",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1640046899455,
+			"name": "create vote",
+			"description": "",
+			"collectionId": "39e73246-990e-2b1a-3db8-0172f4915bc9",
+			"responses": [],
+			"rawModeData": "{\n\t\"cpr\":\"23456780\",\n\t\"candidateId\": 2\n}"
+		}
+	]
+}
