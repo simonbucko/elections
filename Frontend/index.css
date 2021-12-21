@@ -1,0 +1,22 @@
+body,
+html {
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  padding: 16px;
+  box-shadow: 2px 2px 20px #b5b5b5;
+}
+
+.buttonWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
