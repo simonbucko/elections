@@ -1,6 +1,5 @@
 import { SERVER_URL } from "../../constants/index.js"
 const tableBody = document.querySelector('#tableBody');
-const loader = document.querySelector('.spinner-border');
 const createForm = document.querySelector('#add_child_form');
 const updateForm = document.querySelector('#update_child_form');
 const buttonClose = document.querySelectorAll('.btn-close');
@@ -73,14 +72,11 @@ tableBody.addEventListener('click', (e) => {
     }
     //editing
     if (e.target.classList.contains('fa-user-edit')) {
-        const child_id = e.target.getAttribute('data-id');
-        const { id, name, age, phoneNumber, email, address } = candidates[child_id]
-        updateForm.name.value = name;
-        updateForm.age.value = age;
-        updateForm.phoneNumber.value = phoneNumber;
-        updateForm.email.value = email;
-        updateForm.address.value = address;
-        updateForm.id.value = id;
+        const candidate_id = e.target.getAttribute('data-id');
+        const candidate = candidates[candidate_id]
+        updateForm.name.value = candidate.name;
+        updateForm.party.value = candidate.party.id;
+        updateForm.id.value = candidate.id;
     }
 })
 
