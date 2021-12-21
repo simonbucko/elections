@@ -1,8 +1,10 @@
 package volby.entities.Party;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 import volby.entities.candidate.Candidate;
+import volby.entities.vote.Vote;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -26,4 +28,5 @@ public class Party {
     @OneToMany(mappedBy = "party")
     @JsonIgnoreProperties("party")
     private List<Candidate> candidates = new ArrayList<>();
+
 }
