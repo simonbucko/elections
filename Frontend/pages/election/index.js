@@ -1,5 +1,4 @@
 import { SERVER_URL } from "../../constants/index.js"
-const confirmBanner = document.querySelector("#confirmBanner")
 const tableBody = document.querySelector("#tableBody")
 let candidates = [];
 let selectedCandidate = {};
@@ -45,6 +44,7 @@ const fetchAndRenderCandidates = async () => {
         candidates = data
         console.log(data)
         generateTableBody(tableBody, candidates);
+        addListenerForRows();
     } catch (error) {
         console.log(error)
         return []
@@ -64,4 +64,21 @@ const generateTableBody = (parentElement, candidates) => {
         `
     });
     parentElement.innerHTML = HTML;
+}
+
+const addListenerForRows = () => {
+    const rows = Array.from(document.querySelectorAll("#tableBody tr"));
+    rows.forEach(row => {
+        row.addEventListener("click", (e) => {
+            const candidateIndex = e.target.getAttribute('data-candidateindex');
+            selectedCandidate = candidates[candidateIndex];
+            showConfirmBanner()
+        })
+    })
+}
+
+const showConfirmBanner = () => {
+    const confirmBanner = document.querySelector("#confirmBanner")
+    confirmBanner.style.display = "flex"
+    document.querySelector("#candidateName").innerText = `Are you sure you want to vote for ${selectedCandidate.name}?`;
 }
