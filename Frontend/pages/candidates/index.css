@@ -1,0 +1,104 @@
+:root {
+  --blue: #0066bb;
+  --purple: #330033;
+  --red: #880000;
+}
+
+html,
+body {
+  min-height: 100vh;
+  width: 100vw;
+}
+
+.wrapper {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.page_link {
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+}
+
+.page_link:hover {
+  transform: scale(1.05);
+}
+
+.card {
+  height: 300px;
+  width: 300px;
+  background-color: white;
+  margin: 10px 50px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 18px 4px #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--purple);
+}
+
+.card i {
+  display: block;
+  font-size: 100px;
+}
+
+.card div {
+  text-decoration: none;
+  font-size: 27px;
+  text-align: center;
+}
+
+/*chidren subpage css*/
+.fa-arrow-circle-left {
+  font-size: 40px;
+  color: white;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+}
+
+.table_wrapper {
+  padding-top: 75px;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.add_child {
+  text-align: center;
+}
+
+.add_child i {
+  font-size: 30px;
+  color: var(--blue);
+  cursor: pointer;
+}
+
+table thead th {
+  background-color: var(--blue) !important;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+table tr td i {
+  margin: 0 10px;
+}
+
+table tr td i:first-child {
+  color: var(--blue);
+  cursor: pointer;
+}
+
+table tr td i:last-child {
+  color: var(--red);
+  cursor: pointer;
+}
+
+.fa-plus-circle {
+  color: var(--blue) !important;
+}
