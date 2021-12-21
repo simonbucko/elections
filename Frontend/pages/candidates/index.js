@@ -57,12 +57,12 @@ tableBody.addEventListener('click', (e) => {
     if (e.target.classList.contains('fa-trash')) {
         const id = e.target.getAttribute('data-id');
         document.querySelector(`tr[data-id="${id}"]`).remove();
-        fetch(`${SERVER_URL}/${id}`, {
+        fetch(`${SERVER_URL}/api/candidates/${id}`, {
             method: 'DELETE'
         })
             .then(response => response.json())
             .then(data => {
-                generateHtml(data);
+                getAllCandidates()
             })
             .catch(error => console.log(error));
     }
@@ -81,7 +81,6 @@ const getAllCandidates = () => {
         .then(response => response.json())
         .then(data => {
             generateHtml(data);
-            console.log(data)
             candidates = data;
         })
         .catch(error => console.log(error));
