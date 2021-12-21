@@ -33,12 +33,9 @@ updateForm.addEventListener('submit', (e) => {
     const data = {
         id: updateForm.id.value,
         name: updateForm.name.value,
-        age: updateForm.age.value,
-        address: updateForm.address.value,
-        phoneNumber: updateForm.phoneNumber.value,
-        email: updateForm.email.value
+        party: updateForm.party.value,
     }
-    fetch(SERVER_URL, {
+    fetch(`${SERVER_URL}/api/candidates`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -47,8 +44,7 @@ updateForm.addEventListener('submit', (e) => {
     })
         .then(response => response.json())
         .then(data => {
-            generateHtml(data);
-            candidates = data;
+            getAllCandidates()
             updateForm.reset();
             buttonClose[1].click();
         })
