@@ -1,5 +1,6 @@
 import { SERVER_URL } from "../../constants/index.js"
 const tableBody = document.querySelector("#tableBody")
+const confirmButton = document.querySelector("#confirmButton")
 let candidates = [];
 let selectedCandidate = {};
 
@@ -8,41 +9,37 @@ window.addEventListener("load", () => {
 })
 
 
-
-// requestForm.addEventListener("submit", (e) => {
-//     e.preventDefault()
-//     const { email } = JSON.parse(sessionStorage.getItem("user"));
-//     const requestData = {
-//         method: ADD,
-//         sender: email,
-//         srcHost: SRC_HOST,
-//         recipient: requestForm.femail.value,
-//         rcpHost: requestForm.fhost.value,
-//         version: 1
-//     }
-//     fetch(`${SERVER_URL}/api/response`, {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify(requestData),
-//     })
-//         .then(response => response.json()
-//         )
-//         .then(data => {
-//             console.log(data)
-//         })
-//         .catch(error => {
-//             console.log(error)
-//         });
-// })
+confirmButton.addEventListener("click", (e) => {
+    const cpr = JSON.parse(sessionStorage.getItem("cpr"));
+    const requestData = {
+        cpr,
+        candidateId: selectedCandidate.id
+    }
+    console.log(requestData);
+    fetch(`${SERVER_URL}/api/votes`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(requestData),
+    })
+        .then(response => response.json()
+        )
+        .then(data => {
+            console.log(data)
+            sessionStorage.removeItem("cpr")
+            window.location.href = "/pages/confirmation"
+        })
+        .catch(error => {
+            window.location.href = "/pages/confirmation"
+        });
+})
 
 const fetchAndRenderCandidates = async () => {
     try {
         const response = await fetch(`${SERVER_URL}/api/candidates`);
         const data = await response.json();
         candidates = data
-        console.log(data)
         generateTableBody(tableBody, candidates);
         addListenerForRows();
     } catch (error) {
