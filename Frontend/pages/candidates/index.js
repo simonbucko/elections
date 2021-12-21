@@ -11,12 +11,9 @@ createForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const data = {
         name: createForm.name.value,
-        age: createForm.age.value,
-        address: createForm.address.value,
-        phoneNumber: createForm.phoneNumber.value,
-        email: createForm.email.value
+        party: createForm.party.value,
     }
-    fetch(SERVER_URL, {
+    fetch(`${SERVER_URL}/api/candidates`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -25,8 +22,7 @@ createForm.addEventListener('submit', (e) => {
     })
         .then(response => response.json())
         .then(data => {
-            generateHtml(data);
-            candidates = data;
+            getAllCandidates()
             createForm.reset();
             buttonClose[0].click();
         })
